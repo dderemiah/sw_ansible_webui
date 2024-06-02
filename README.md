@@ -37,39 +37,7 @@ ansible-galaxy install ansibleguy.sw_ansible_webui --roles-path ./roles
 ansible-galaxy install -r requirements.yml
 ```
 
-## Functionality
-
-* **Package installation**
-  * Python3, Python3-PIP, Python3-Virtualenv, Git, Git-LFS
-  * AnsibleGuy-WebUI with its Python3 Module-dependencies
-
-
-* **Configuration**
-  * Virtual-Environment used (`/home/ansible-webui/venv`)
-
-  * **Default config**:
-    * Cleanup logs older than 180 days
-    * Backup retention 30 days
-
-  * **Default opt-ins**:
-    * Installing common Python3 modules (*'jmespath', 'netaddr', 'passlib', 'pywinrm', 'requests', 'cryptography'*)
-    * Daily local backups
-    * Auto-Upgrade App and Requirements on service-startup
-    * Nginx proxy
-    * Create service-user
-
-## Info
-
-* **Note:** this role currently only supports debian-based systems
-
-
-* **Note:** Most of the role's functionality can be opted in or out.
-
-  For all available options - see the default-config located in [the main defaults-file](https://github.com/ansibleguy/sw_ansible_webui/blob/latest/defaults/main/1_main.yml)!
-
-
-* **Warning:** Not every setting/variable you provide will be checked for validity. Bad config might break the role!
-
+----
 
 ## Usage
 
@@ -135,3 +103,38 @@ To debug errors - you can set the 'debug' variable at runtime:
 ```bash
 ansible-playbook -K -D -i inventory/hosts.yml playbook.yml -e debug=yes
 ```
+
+----
+
+## Functionality
+
+* **Package installation**
+  * Python3, Python3-PIP, Python3-Virtualenv, Git, Git-LFS
+  * AnsibleGuy-WebUI with its Python3 Module-dependencies
+
+
+* **Configuration**
+  * Virtual-Environment used (`/home/ansible-webui/venv`)
+
+  * **Default config**:
+    * Cleanup logs older than 180 days
+    * Backup retention 30 days
+
+  * **Default opt-ins**:
+    * Installing common Python3 modules (*'jmespath', 'netaddr', 'passlib', 'pywinrm', 'requests', 'cryptography'*)
+    * Daily local backups
+    * Auto-Upgrade App and Requirements on service-startup
+    * Nginx proxy
+    * Create service-user
+
+## Info
+
+* **Note:** this role currently only supports debian-based systems
+
+
+* **Note:** Most of the role's functionality can be opted in or out.
+
+  For all available options - see the default-config located in [the main defaults-file](https://github.com/ansibleguy/sw_ansible_webui/blob/latest/defaults/main/1_main.yml)!
+
+
+* **Warning:** Not every setting/variable you provide will be checked for validity. Bad config might break the role!
